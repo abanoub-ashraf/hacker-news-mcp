@@ -1,0 +1,49 @@
+{
+  "name": "@devabdultech/hacker-news-mcp",
+  "version": "1.2.2",
+  "main": "./dist/index.js",
+  "type": "module",
+  "bin": {
+    "hacker-news-mcp": "./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devabdultech/hacker-news-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/devabdultech/hacker-news-mcp/issues"
+  },
+  "files": [
+    "dist",
+    "dist/index.js"
+  ],
+  "scripts": {
+    "build": "tsc && shx chmod +x dist/*.js",
+    "start": "node dist/index.js",
+    "test": "node --import 'data:text/javascript,import { register } from \"node:module\"; import { pathToFileURL } from \"node:url\"; register(\"ts-node/esm\", pathToFileURL(\"./\"));' --test tests/**/*.test.ts"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "hacker-news",
+    "hn",
+    "news",
+    "claude"
+  ],
+  "author": "devabdultech",
+  "license": "MIT",
+  "description": "Hacker News MCP server for search, thread analysis, and founder research",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "@types/node": "^22.13.7",
+    "@types/node-fetch": "^2.6.12",
+    "node-fetch": "^3.3.2",
+    "zod": "^3.24.2",
+    "zod-to-json-schema": "^3.24.3"
+  },
+  "devDependencies": {
+    "shx": "^0.3.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}
